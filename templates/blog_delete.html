@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}       {% endblock %}
+
+{% block content %}
+<h1>Blog delete</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>Siz haqiqatdan ham <strong>{{ blog.title }}</strong> blogni o'chirmoqchimisiz?:</p>
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+{% endblock %}

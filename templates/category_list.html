@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}       {% endblock %}
+
+{% block content %}
+    <h1>All category</h1>
+    <hr>
+    {% for category in categories %}
+        <a href="{% url 'blog_category' category.slug %}"><h3>{{ category.name }}</h3></a>
+        <img style="width: 100px" src="{{ category.image.url }}">
+        {% if category.content %}
+            <p>{{ category.content }}</p>
+        {% else %}
+            <p>Izoh yozilmagan!</p>
+        {% endif %}
+        <p>Bloglar soni: <strong>{{ category.category_blog.count }}</strong></p>
+        <hr>
+    {% endfor %}
+{% endblock %}

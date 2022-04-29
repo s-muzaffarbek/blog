@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}       {% endblock %}
+
+{% block content %}
+
+    <p>Username: <strong>{{ myuser.username }}</strong></p>
+    <p>First name: {{ myuser.first_name }}</p>
+    <p>Last name: {{ myuser.last_name }}</p>
+    <p>Phone number: {{ myuser.phone }}</p>
+    <p>Birthday: {{ myuser.birth_day }}</p>
+    <hr>
+        <a class="btn btn-success" href="{% url 'user_edit' myuser.id %}">Edit Profile</a>
+{% endblock %}
